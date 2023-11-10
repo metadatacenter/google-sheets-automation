@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      let data = <?!= JSON.stringify(data) ?>; // Stores the data directly in the javascript code
+      function downloadFile() {
+        document.getElementById("dlBtn").innerText = "Downloading..";
+        window.open(data.url, '_blank');
+        document.getElementById("dlBtn").disabled = true;
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <p>Use the download button to save the output file into your local computer</p>
+      <button id="dlBtn" onclick="downloadFile()">Download</button>
+    </div>
+  </body>
+</html>
