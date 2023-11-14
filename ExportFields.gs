@@ -50,9 +50,9 @@ function exportFields() {
             Logger.log("Storing new value set: " + fieldName);
             const valueSetLink = storeValueSet(fieldName, permissibleValues);
             const templateSheetPermissibleValuesRange = templateSheet.getRange(rowIndex, TEMPLATE_PERMISSIBLE_VALUES);
-            setUrlByRange(templateSheetPermissibleValuesRange, valueSetLink, "View");
+            setUrlByRange(templateSheetPermissibleValuesRange, valueSetLink, fieldName);
             const fieldSheetPermissibleValueRange = fieldSheet.getRange(insertionIndex, FIELD_GLOSSARY_PERMISSIBLE_VALUES);
-            setUrlByRange(fieldSheetPermissibleValueRange, valueSetLink, "View");
+            setUrlByRange(fieldSheetPermissibleValueRange, valueSetLink, fieldName);
             storedValueSets.push(fieldName);
           }
 
