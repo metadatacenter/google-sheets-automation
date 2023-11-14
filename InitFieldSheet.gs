@@ -5,7 +5,6 @@ function initFieldSheet(sheetName) {
   setHeader(fieldSheet, 1, FIELD_GLOSSARY_FIELD_NAME, "Field Name", 175);
   setHeader(fieldSheet, 1, FIELD_GLOSSARY_FIELD_DESCRIPTION, "Field Description", 520);
   setHeader(fieldSheet, 1, FIELD_GLOSSARY_PERMISSIBLE_VALUES, "Enumerated Values", 150);
-  setHeader(fieldSheet, 1, FIELD_GLOSSARY_VALUE_SET_IRI, "Lookup", 150)
   setHeader(fieldSheet, 1, FIELD_GLOSSARY_STRING_PATTERN, "String Pattern", 150)
   setHeader(fieldSheet, 1, FIELD_GLOSSARY_NUMBER_RANGE, "Number Range", 150);
   setHeader(fieldSheet, 1, FIELD_GLOSSARY_EXAMPLE, "Example", 150);

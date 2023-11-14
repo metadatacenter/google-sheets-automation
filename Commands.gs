@@ -66,8 +66,7 @@ function autoFillOut(cell) {
     Logger.log("Copying '" + fieldName + "' definition to the template sheet");
     const fieldDefinitionRange = searchResult.data.range.offset(0, 1);
     setValuesByRow(templateSheet, rowIndex, fieldDefinitionRange.getValues(), startingColumn=TEMPLATE_FIELD_NAME);
-    setRichTextUrl(templateSheet, rowIndex, TEMPLATE_PERMISSIBLE_VALUES, fieldDefinitionRange.offset(0, 2, 1, 1).getRichTextValue()); // view link
-    setRichTextUrl(templateSheet, rowIndex, TEMPLATE_VALUE_SET_IRI, fieldDefinitionRange.offset(0, 3, 1, 1).getRichTextValue()); // lookup link
+    setRichTextUrl(templateSheet, rowIndex, TEMPLATE_PERMISSIBLE_VALUES, fieldDefinitionRange.offset(0, 2, 1, 1).getRichTextValue()); // value set link
   } else { 
     setValuesByRow(templateSheet, rowIndex, [["","","","","","",""]], startingColumn=TEMPLATE_FIELD_DESCRIPTION);
   }

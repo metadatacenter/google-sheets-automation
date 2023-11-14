@@ -14,7 +14,7 @@ function searchValueSet(fieldName, data) {
       name: valueSetSheet.getRange(row, VALUESET_GLOSSARY_CATEGORY).getValue(),
       link: generateLinkToRange(valueSetSheet.getRange(row, VALUESET_GLOSSARY_CATEGORY)),
       acronym: valueSetSheet.getRange(row, VALUESET_GLOSSARY_MAPPED_TO_ONTOLOGY_ACRONYM).getValue(),
-      lookup: expandPrefixedName(valueSetSheet.getRange(row, VALUESET_GLOSSARY_MAPPED_TO_TERM_ID).getValue())
+      url: expandPrefixedName(valueSetSheet.getRange(row, VALUESET_GLOSSARY_MAPPED_TO_TERM_ID).getValue())
     } : null,
   };
 }

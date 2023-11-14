@@ -30,7 +30,7 @@ function synchronizeFields() {
         const effectiveFieldName = fieldSearchResultRange.getCell(1, 2).getValue();
         const reportingFieldName = `${fieldName}${fieldName != effectiveFieldName ? ` -> ${effectiveFieldName}` : ''}`;
 
-        // Update the view link and lookup URL when a value set is present for the field name.
+        // Update the value set reference link when a value set is present for the field name.
         const valueSetSearchResult = searchValueSet(effectiveFieldName, valueSetData);
         if (valueSetSearchResult.success) {
           const valueSetLink = valueSetSearchResult.data.link;

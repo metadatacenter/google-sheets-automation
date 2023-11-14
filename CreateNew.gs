@@ -30,7 +30,6 @@ function createNew() {
   templateSheet.getRange(1, 1, 1, 2).mergeAcross();
   setHeader(templateSheet, 1, TEMPLATE_FIELD_DESCRIPTION, "Field Description", 520);
   setHeader(templateSheet, 1, TEMPLATE_PERMISSIBLE_VALUES, "Enumerated Values", 150);
-  setHeader(templateSheet, 1, TEMPLATE_VALUE_SET_IRI, "Lookup", 150)
   setHeader(templateSheet, 1, TEMPLATE_STRING_PATTERN, "String Pattern", 150)
   setHeader(templateSheet, 1, TEMPLATE_NUMBER_RANGE, "Number Range", 150);
   setHeader(templateSheet, 1, TEMPLATE_EXAMPLE, "Example", 150);
