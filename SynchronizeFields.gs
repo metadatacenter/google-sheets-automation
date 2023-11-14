@@ -33,16 +33,16 @@ function synchronizeFields() {
         // Update the view link and lookup URL when a value set is present for the field name.
         const valueSetSearchResult = searchValueSet(effectiveFieldName, valueSetData);
         if (valueSetSearchResult.success) {
-          setUrl(fieldSheet, fieldSearchResult.data.row, FIELD_GLOSSARY_PERMISSIBLE_VALUES, valueSetSearchResult.data.link, "View");
-          setUrl(fieldSheet, fieldSearchResult.data.row, FIELD_GLOSSARY_VALUE_SET_IRI, valueSetSearchResult.data.lookup, valueSetSearchResult.data.acronym);
+          const valueSetLink = valueSetSearchResult.data.link;
+          const valueSetName = valueSetSearchResult.data.name;
+          setUrl(fieldSheet, fieldSearchResult.data.row, FIELD_GLOSSARY_PERMISSIBLE_VALUES, valueSetLink, valueSetName);
           matchingValueSets.push(matchingValueSets.includes(reportingFieldName) ? `${reportingFieldName} (duplicate)` : reportingFieldName);
         }
 
         Logger.log("Fetching field definition: " + effectiveFieldName);
         const fieldDefinitionRange = fieldSearchResultRange.offset(0, 1, 1, 6);  // exclude example  
         setValuesByRow(templateSheet, rowIndex, fieldDefinitionRange.getValues(), startingColumn=TEMPLATE_FIELD_NAME);
-        setRichTextUrl(templateSheet, rowIndex, TEMPLATE_PERMISSIBLE_VALUES, fieldDefinitionRange.offset(0, 2, 1, 1).getRichTextValue()); // view link
-        setRichTextUrl(templateSheet, rowIndex, TEMPLATE_VALUE_SET_IRI, fieldDefinitionRange.offset(0, 3, 1, 1).getRichTextValue()); // lookup link
+        setRichTextValue(templateSheet, rowIndex, TEMPLATE_PERMISSIBLE_VALUES, fieldDefinitionRange.offset(0, 2, 1, 1).getRichTextValue()); // value set text
         matchingFields.push(matchingFields.includes(reportingFieldName) ? `${reportingFieldName} (duplicate)` : reportingFieldName);
       
         templateSheet.getRange(rowIndex, TEMPLATE_FIELD_NAME).clearDataValidations();
